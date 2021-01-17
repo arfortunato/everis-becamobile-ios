@@ -11,13 +11,13 @@ import AlamofireImage
 
 class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
+    
+
 
     @IBOutlet weak var filmesCollectionView: UICollectionView!
-    
-    var movies: [Movie] = []
-    var imagemDoBanner:UIImage?
-    
-    let client: MovieServiceProtocol = MovieService()
+
+    var movieList:[Movie] = []
+    var posterPath: String?
     
     override func viewDidLoad() {
         
@@ -25,41 +25,29 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         filmesCollectionView.dataSource = self
         filmesCollectionView.delegate = self
         
-        client.getMovie {(movie) in
-            self.movies = movie
+        MovieService().getMovie { (movieList) in
+            self.movieList = movieList
             self.filmesCollectionView.reloadData()
         }
     }
     
 
-    //MARK: - Editando Collection View
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return movies.count
+        return movieList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let celulaFilme = collectionView.dequeueReusableCell(withReuseIdentifier: "celulaPacote", for: indexPath) as! FilmesCollectionViewCell
+        let celulaPacote = collectionView.dequeueReusableCell(withReuseIdentifier: "celulaPacote", for: indexPath) as! FilmesCollectionViewCell
         
-        let posterPathURL = URL(string: "https://image.tmdb.org/t/p/w185\(movies[indexPath.row].posterPath)")
-        celulaFilme.capaFilme.af_setImage(withURL: (posterPathURL)!)
-        celulaFilme.layer.cornerRadius = 10
-        celulaFilme.layer.masksToBounds = true
-        return celulaFilme
+        let filmeAtual = movieList[indexPath.item]
+        
+        guard let posterUrl = filmeAtual.posterPath else { return celulaPacote }
+        MovieService().getImage(posterUrl) { (imagem) in
+            celulaPacote.capaFilme.image = imagem
+        }
+        
+        return celulaPacote
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return UIDevice.current.userInterfaceIdiom == .phone ? CGSize(width: collectionView.bounds.width/3-10, height: 150) : CGSize(width: collectionView.bounds.width/5-10, height: 250)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
-        let filmeSelecionado = movies[indexPath.row]
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "showDetails") as! ShowDetailsViewController
-        
-        controller.movieSelected = filmeSelecionado
-      
-        self.navigationController?.pushViewController(controller, animated: true)
-    }
 }
-    
+
