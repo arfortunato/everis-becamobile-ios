@@ -106,9 +106,9 @@
 		8B00977725A73EED0013E024 /* PolibioFilms */ = {
 			isa = PBXGroup;
 			children = (
-				8BE1819F25B6090F0007F158 /* ViewModel */,
 				8B0A356625AF2A1E005358CB /* Aplication */,
 				8BFBD7AC25AA10A500E36B63 /* Views */,
+				8BE1819F25B6090F0007F158 /* ViewModel */,
 				8B0A357425AF357E005358CB /* Models */,
 				8B0A356A25AF2ABD005358CB /* Service */,
 				8B0A356E25AF2C24005358CB /* Core */,
@@ -182,8 +182,8 @@
 			isa = PBXGroup;
 			children = (
 				8BFBD7E725AA342C00E36B63 /* ShowDetailsViewController.swift */,
-				8BFBD7D225AA202A00E36B63 /* FilmesCollectionViewCell.swift */,
 				8BFBD7DD25AA246B00E36B63 /* MainViewController.swift */,
+				8BFBD7D225AA202A00E36B63 /* FilmesCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

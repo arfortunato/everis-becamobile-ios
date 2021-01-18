@@ -16,10 +16,17 @@ class ShowDetailsViewController: UIViewController {
     @IBOutlet weak var avaliacaoFilme: UILabel!
     @IBOutlet weak var bannerFilme: UIImageView!
     
-    var movieSelected :Movie?
+    var detailsViewModels = [MainViewModel]()
+    let client: MovieServiceProtocol = MovieService()
+    
+    var movieSelected: MainViewModel?
+    var posterPath: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        client.getMovie {(movie) in
+            self.detailsViewModels = movie.map({return MainViewModel(movie: $0)})
+        }
         configCell()
     }
     
@@ -27,8 +34,8 @@ class ShowDetailsViewController: UIViewController {
         
         self.labelTItuloShowDetails.text = movieSelected?.title ?? movieSelected?.name
         self.labelDescricaoShowDetais.text = movieSelected?.overview
-        let voteAverage = movieSelected?.voteAverage
-        let voteAverageFormatada = String(format: "%.2f", voteAverage!)
+        guard let voteAverage = movieSelected?.voteAverage else {return}
+        let voteAverageFormatada = String(format: "%.2f", voteAverage)
         self.avaliacaoFilme.text = voteAverageFormatada
         
         let backdrop = movieSelected?.backdropPath

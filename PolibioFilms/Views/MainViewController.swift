@@ -7,7 +7,7 @@
 
 import UIKit
 import Alamofire
-import AlamofireImage
+
 
 class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
@@ -24,7 +24,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         filmesCollectionView.delegate = self
         
         client.getMovie {(movie) in
-            self.bannerViewModels = movie.map({return MainViewModel(poster: $0)})
+            self.bannerViewModels = movie.map({return MainViewModel(movie: $0)})
             self.filmesCollectionView.reloadData()
         }
     }
@@ -51,10 +51,10 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
-        let filmeSelecionado = bannerViewModels[indexPath.row]
+        let filmeSelecionado = bannerViewModels[indexPath.item]
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "showDetails") as! ShowDetailsViewController
-      
+        controller.movieSelected = filmeSelecionado
         self.navigationController?.pushViewController(controller, animated: true)
     }
 }

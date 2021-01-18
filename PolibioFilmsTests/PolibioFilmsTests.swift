@@ -6,6 +6,7 @@
 //
 
 import XCTest
+@testable import PolibioFilms
 
 class PolibioFilmsTests: XCTestCase {
     
@@ -28,6 +29,10 @@ class PolibioFilmsTests: XCTestCase {
         measure {
             // Put the code you want to measure the time of here.
         }
+    }
+    
+    func testMainViewModel(){
+//        let mainViewModel = MainViewModel(poster: Movie)
     }
 
 }

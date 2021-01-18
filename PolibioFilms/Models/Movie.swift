@@ -24,15 +24,15 @@ struct Movies: Codable {
 struct Movie: Codable {
     let voteAverage: Double
     let title: String?
-    let overview: String
+    let overview: String?
     let releaseDate: String?
     let adult: Bool?
-    let backdropPath: String
+    let backdropPath: String?
     let genreIDS: [Int]
     let voteCount: Int
     let originalLanguage: OriginalLanguage
     let originalTitle: String?
-    let posterPath: String
+    let posterPath: String?
     let id: Int
     let video: Bool?
     let popularity: Double

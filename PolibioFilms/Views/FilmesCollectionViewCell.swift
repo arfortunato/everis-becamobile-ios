@@ -16,6 +16,8 @@ class FilmesCollectionViewCell: UICollectionViewCell {
             
             guard let posterPathURL = URL(string: "https://image.tmdb.org/t/p/w185\(mainViewModel.posterPath)") else {return}
             capaFilme.af_setImage(withURL: posterPathURL)
+            capaFilme.layer.cornerRadius = 10
+            capaFilme.layer.masksToBounds = true
         }
     }
     
