@@ -16,6 +16,7 @@
 		8B0097B225A77A560013E024 /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0097B125A77A560013E024 /* MovieService.swift */; };
 		8B0097C225A798A10013E024 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0097C125A798A10013E024 /* Movie.swift */; };
 		8B0A357025AF2C24005358CB /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0A356F25AF2C24005358CB /* Bindable.swift */; };
+		8BE181A125B609230007F158 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE181A025B609230007F158 /* MainViewModel.swift */; };
 		8BFBD7D325AA202A00E36B63 /* FilmesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFBD7D225AA202A00E36B63 /* FilmesCollectionViewCell.swift */; };
 		8BFBD7DE25AA246B00E36B63 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFBD7DD25AA246B00E36B63 /* MainViewController.swift */; };
 		8BFBD7E825AA342C00E36B63 /* ShowDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFBD7E725AA342C00E36B63 /* ShowDetailsViewController.swift */; };
@@ -35,6 +36,7 @@
 		8B0097B125A77A560013E024 /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
 		8B0097C125A798A10013E024 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		8B0A356F25AF2C24005358CB /* Bindable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
+		8BE181A025B609230007F158 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		8BFBD7D225AA202A00E36B63 /* FilmesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmesCollectionViewCell.swift; sourceTree = "<group>"; };
 		8BFBD7DD25AA246B00E36B63 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8BFBD7E725AA342C00E36B63 /* ShowDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailsViewController.swift; sourceTree = "<group>"; };
@@ -81,9 +83,9 @@
 		8B00977725A73EED0013E024 /* PolibioFilms */ = {
 			isa = PBXGroup;
 			children = (
+				8BE1819F25B6090F0007F158 /* ViewModel */,
 				8B0A356625AF2A1E005358CB /* Aplication */,
 				8BFBD7AC25AA10A500E36B63 /* Views */,
-				8B0A357625AF3B91005358CB /* ViewModels */,
 				8B0A357425AF357E005358CB /* Models */,
 				8B0A356A25AF2ABD005358CB /* Service */,
 				8B0A356E25AF2C24005358CB /* Core */,
@@ -128,14 +130,6 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
-		8B0A357225AF3220005358CB /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				8BFBD7D225AA202A00E36B63 /* FilmesCollectionViewCell.swift */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
 		8B0A357425AF357E005358CB /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,18 +138,19 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		8B0A357625AF3B91005358CB /* ViewModels */ = {
+		8BE1819F25B6090F0007F158 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				8BE181A025B609230007F158 /* MainViewModel.swift */,
 			);
-			path = ViewModels;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		8BFBD7AC25AA10A500E36B63 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8B0A357225AF3220005358CB /* Cell */,
 				8BFBD7E725AA342C00E36B63 /* ShowDetailsViewController.swift */,
+				8BFBD7D225AA202A00E36B63 /* FilmesCollectionViewCell.swift */,
 				8BFBD7DD25AA246B00E36B63 /* MainViewController.swift */,
 			);
 			path = Views;
@@ -292,6 +287,7 @@
 				8BFBD7DE25AA246B00E36B63 /* MainViewController.swift in Sources */,
 				8BFBD7E825AA342C00E36B63 /* ShowDetailsViewController.swift in Sources */,
 				8B00977B25A73EED0013E024 /* SceneDelegate.swift in Sources */,
+				8BE181A125B609230007F158 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

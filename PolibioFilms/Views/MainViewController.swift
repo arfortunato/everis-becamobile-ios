@@ -14,9 +14,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
     @IBOutlet weak var filmesCollectionView: UICollectionView!
     
-    var movies: [Movie] = []
-    var imagemDoBanner:UIImage?
-    
+    var bannerViewModels = [MainViewModel]()
     let client: MovieServiceProtocol = MovieService()
     
     override func viewDidLoad() {
@@ -26,7 +24,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         filmesCollectionView.delegate = self
         
         client.getMovie {(movie) in
-            self.movies = movie
+            self.bannerViewModels = movie.map({return MainViewModel(poster: $0)}) 
             self.filmesCollectionView.reloadData()
         }
     }
@@ -34,14 +32,14 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
     //MARK: - Editando Collection View
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return movies.count
+        return bannerViewModels.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let celulaFilme = collectionView.dequeueReusableCell(withReuseIdentifier: "celulaPacote", for: indexPath) as! FilmesCollectionViewCell
         
-        let posterPathURL = URL(string: "https://image.tmdb.org/t/p/w185\(movies[indexPath.row].posterPath)")
-        celulaFilme.capaFilme.af_setImage(withURL: (posterPathURL)!)
+        let mainViewModel = bannerViewModels[indexPath.item]
+        celulaFilme.mainViewModel = mainViewModel
         celulaFilme.layer.cornerRadius = 10
         celulaFilme.layer.masksToBounds = true
         return celulaFilme
@@ -53,11 +51,9 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
-        let filmeSelecionado = movies[indexPath.row]
+        let filmeSelecionado = bannerViewModels[indexPath.row]
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "showDetails") as! ShowDetailsViewController
-        
-        controller.movieSelected = filmeSelecionado
       
         self.navigationController?.pushViewController(controller, animated: true)
     }
