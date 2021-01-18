@@ -17,10 +17,21 @@
 		8B0097C225A798A10013E024 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0097C125A798A10013E024 /* Movie.swift */; };
 		8B0A357025AF2C24005358CB /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0A356F25AF2C24005358CB /* Bindable.swift */; };
 		8BE181A125B609230007F158 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE181A025B609230007F158 /* MainViewModel.swift */; };
+		8BE5BA1E25B6212000DECA2A /* PolibioFilmsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE5BA1D25B6212000DECA2A /* PolibioFilmsTests.swift */; };
 		8BFBD7D325AA202A00E36B63 /* FilmesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFBD7D225AA202A00E36B63 /* FilmesCollectionViewCell.swift */; };
 		8BFBD7DE25AA246B00E36B63 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFBD7DD25AA246B00E36B63 /* MainViewController.swift */; };
 		8BFBD7E825AA342C00E36B63 /* ShowDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFBD7E725AA342C00E36B63 /* ShowDetailsViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8BE5BA2025B6212000DECA2A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B00976D25A73EED0013E024 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B00977425A73EED0013E024;
+			remoteInfo = PolibioFilms;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		68EECA947F36A2DEE929787B /* Pods-PolibioFilms.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PolibioFilms.release.xcconfig"; path = "Target Support Files/Pods-PolibioFilms/Pods-PolibioFilms.release.xcconfig"; sourceTree = "<group>"; };
@@ -37,6 +48,9 @@
 		8B0097C125A798A10013E024 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		8B0A356F25AF2C24005358CB /* Bindable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 		8BE181A025B609230007F158 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		8BE5BA1B25B6212000DECA2A /* PolibioFilmsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PolibioFilmsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BE5BA1D25B6212000DECA2A /* PolibioFilmsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolibioFilmsTests.swift; sourceTree = "<group>"; };
+		8BE5BA1F25B6212000DECA2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BFBD7D225AA202A00E36B63 /* FilmesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmesCollectionViewCell.swift; sourceTree = "<group>"; };
 		8BFBD7DD25AA246B00E36B63 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8BFBD7E725AA342C00E36B63 /* ShowDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailsViewController.swift; sourceTree = "<group>"; };
@@ -48,6 +62,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				17D94302EEAA9052EE337B58 /* Pods_PolibioFilms.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BE5BA1825B6212000DECA2A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				8B00977725A73EED0013E024 /* PolibioFilms */,
+				8BE5BA1C25B6212000DECA2A /* PolibioFilmsTests */,
 				8B00977625A73EED0013E024 /* Products */,
 				BCE7CC689524843F928E9147 /* Pods */,
 				4E0C50B28B5D6258E498C12F /* Frameworks */,
@@ -76,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				8B00977525A73EED0013E024 /* PolibioFilms.app */,
+				8BE5BA1B25B6212000DECA2A /* PolibioFilmsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -146,6 +169,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		8BE5BA1C25B6212000DECA2A /* PolibioFilmsTests */ = {
+			isa = PBXGroup;
+			children = (
+				8BE5BA1D25B6212000DECA2A /* PolibioFilmsTests.swift */,
+				8BE5BA1F25B6212000DECA2A /* Info.plist */,
+			);
+			path = PolibioFilmsTests;
+			sourceTree = "<group>";
+		};
 		8BFBD7AC25AA10A500E36B63 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +219,24 @@
 			productReference = 8B00977525A73EED0013E024 /* PolibioFilms.app */;
 			productType = "com.apple.product-type.application";
 		};
+		8BE5BA1A25B6212000DECA2A /* PolibioFilmsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8BE5BA2225B6212000DECA2A /* Build configuration list for PBXNativeTarget "PolibioFilmsTests" */;
+			buildPhases = (
+				8BE5BA1725B6212000DECA2A /* Sources */,
+				8BE5BA1825B6212000DECA2A /* Frameworks */,
+				8BE5BA1925B6212000DECA2A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8BE5BA2125B6212000DECA2A /* PBXTargetDependency */,
+			);
+			name = PolibioFilmsTests;
+			productName = PolibioFilmsTests;
+			productReference = 8BE5BA1B25B6212000DECA2A /* PolibioFilmsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -198,6 +248,10 @@
 				TargetAttributes = {
 					8B00977425A73EED0013E024 = {
 						CreatedOnToolsVersion = 12.3;
+					};
+					8BE5BA1A25B6212000DECA2A = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 8B00977425A73EED0013E024;
 					};
 				};
 			};
@@ -215,6 +269,7 @@
 			projectRoot = "";
 			targets = (
 				8B00977425A73EED0013E024 /* PolibioFilms */,
+				8BE5BA1A25B6212000DECA2A /* PolibioFilmsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -227,6 +282,13 @@
 				8B00978525A73EEE0013E024 /* LaunchScreen.storyboard in Resources */,
 				8B00978225A73EEE0013E024 /* Assets.xcassets in Resources */,
 				8B00978025A73EED0013E024 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BE5BA1925B6212000DECA2A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,7 +353,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8BE5BA1725B6212000DECA2A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BE5BA1E25B6212000DECA2A /* PolibioFilmsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8BE5BA2125B6212000DECA2A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8B00977425A73EED0013E024 /* PolibioFilms */;
+			targetProxy = 8BE5BA2025B6212000DECA2A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		8B00977E25A73EED0013E024 /* Main.storyboard */ = {
@@ -467,6 +545,44 @@
 			};
 			name = Release;
 		};
+		8BE5BA2325B6212000DECA2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PolibioFilmsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github-arfortunato.PolibioFilmsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PolibioFilms.app/PolibioFilms";
+			};
+			name = Debug;
+		};
+		8BE5BA2425B6212000DECA2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PolibioFilmsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github-arfortunato.PolibioFilmsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PolibioFilms.app/PolibioFilms";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -484,6 +600,15 @@
 			buildConfigurations = (
 				8B00978A25A73EEE0013E024 /* Debug */,
 				8B00978B25A73EEE0013E024 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8BE5BA2225B6212000DECA2A /* Build configuration list for PBXNativeTarget "PolibioFilmsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BE5BA2325B6212000DECA2A /* Debug */,
+				8BE5BA2425B6212000DECA2A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

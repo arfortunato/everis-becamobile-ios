@@ -37,20 +37,4 @@ class MovieService: MovieServiceProtocol {
             }
         }
     }
-    
-    func getImage(completionHandler: @escaping ([Movie]) -> UIImage) {
-        guard let urlApi = URL(string: "\(urlAPI)\(token)\(language)") else {return}
-        Alamofire.request(urlApi, method: .get).responseImage { (response) in
-            if let data = response.data{
-                do{
-                    let decoder = JSONDecoder()
-                    let filmesResposta = try decoder.decode(Movies.self, from: data)
-                    completionHandler(filmesResposta.results)
-                }
-                catch let error{
-                    print(error)
-                }
-            }
-        }
-    }
 }

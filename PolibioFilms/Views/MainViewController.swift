@@ -24,7 +24,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         filmesCollectionView.delegate = self
         
         client.getMovie {(movie) in
-            self.bannerViewModels = movie.map({return MainViewModel(poster: $0)}) 
+            self.bannerViewModels = movie.map({return MainViewModel(poster: $0)})
             self.filmesCollectionView.reloadData()
         }
     }
