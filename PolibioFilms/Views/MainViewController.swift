@@ -11,53 +11,51 @@ import AlamofireImage
 
 class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-    @IBOutlet weak var filmesCollectionView: UICollectionView!
 
-//    var movieList:[Movie] = []
-//    var posterPath: String?
-    var viewModel: MainViewModel = MainViewModel()
+    @IBOutlet weak var filmesCollectionView: UICollectionView!
     
+    var bannerViewModels = [MainViewModel]()
+    let client: MovieServiceProtocol = MovieService()
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         filmesCollectionView.dataSource = self
         filmesCollectionView.delegate = self
-        bind()
-        viewModel.loadMovie()
         
-        //self.filmesCollectionView.reloadData()
-//        MovieService().getMovie { (movieList) in
-//            //self.viewModel = movieList
-//            self.filmesCollectionView.reloadData()
-//        }
-    }
-    
-    func bind(){
-        viewModel.viewData.bind { (viewData) in
+        client.getMovie {(movie) in
+            self.bannerViewModels = movie.map({return MainViewModel(poster: $0)}) 
             self.filmesCollectionView.reloadData()
         }
     }
     
 
+    //MARK: - Editando Collection View
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.count()
+        return bannerViewModels.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let celulaPacote = collectionView.dequeueReusableCell(withReuseIdentifier: "celulaPacote", for: indexPath) as! FilmesCollectionViewCell
+        let celulaFilme = collectionView.dequeueReusableCell(withReuseIdentifier: "celulaPacote", for: indexPath) as! FilmesCollectionViewCell
         
-        let filmeAtual = viewModel.item()[indexPath.item]
-        celulaPacote.configCell(movie: filmeAtual)
-//        celulaPacote.backgroundColor = .red
-        
-//        guard let posterUrl = filmeAtual.posterPath else { return celulaPacote }
-//        MovieService().getImage(posterUrl) { (imagem) in
-//            celulaPacote.capaFilme.image = imagem
-//        }
-        
-        return celulaPacote
+        let mainViewModel = bannerViewModels[indexPath.item]
+        celulaFilme.mainViewModel = mainViewModel
+        celulaFilme.layer.cornerRadius = 10
+        celulaFilme.layer.masksToBounds = true
+        return celulaFilme
     }
     
-}
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return UIDevice.current.userInterfaceIdiom == .phone ? CGSize(width: collectionView.bounds.width/3-10, height: 150) : CGSize(width: collectionView.bounds.width/5-10, height: 250)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
+        let filmeSelecionado = bannerViewModels[indexPath.row]
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "showDetails") as! ShowDetailsViewController
+      
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+}
+    
