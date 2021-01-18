@@ -12,16 +12,16 @@ protocol MovieViewDataType {
 
 class MainViewData{
     
-    private let models: [Movie]
+    private let model: [Movie]
     
-    init(models: [Movie]){
-        self.models = models
+    init(model: [Movie]){
+        self.model = model
     }
 }
 
 
 extension MainViewData: MovieViewDataType{
     var movies: [Movie]{
-        return models
+        return model
     }
 }
