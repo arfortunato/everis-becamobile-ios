@@ -32,7 +32,7 @@ class ShowDetailsViewController: UIViewController {
     
     func configCell(){
         
-        self.labelTItuloShowDetails.text = movieSelected?.title ?? movieSelected?.name
+        self.labelTItuloShowDetails.text = movieSelected?.title
         self.labelDescricaoShowDetais.text = movieSelected?.overview
         guard let voteAverage = movieSelected?.voteAverage else {return}
         let voteAverageFormatada = String(format: "%.2f", voteAverage)

@@ -3,4 +3,54 @@
    uuid = "82112E6F-9604-42F2-8BD5-51167A0E148E"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "249ED77D-3059-47DF-930E-AF01E47043E2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PolibioFilms/Views/ShowDetailsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "249ED77D-3059-47DF-930E-AF01E47043E2 - 84dba2ac37f76467"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PolibioFilms.ShowDetailsViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "PolibioFilms"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arodrfor/Desktop/ProvaBeca-boasPraticas/everis-becamobile-ios/PolibioFilms/Views/ShowDetailsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "120">
+               </Location>
+               <Location
+                  uuid = "249ED77D-3059-47DF-930E-AF01E47043E2 - d59478f333a910e7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;PolibioFilms.Movie&gt;) -&gt; () in PolibioFilms.ShowDetailsViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "PolibioFilms"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arodrfor/Desktop/ProvaBeca-boasPraticas/everis-becamobile-ios/PolibioFilms/Views/ShowDetailsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "41">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
