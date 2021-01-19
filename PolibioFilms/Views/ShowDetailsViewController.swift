@@ -11,9 +11,9 @@ import AlamofireImage
 class ShowDetailsViewController: UIViewController {
 
     @IBOutlet weak var labelTItuloShowDetails: UILabel!
-    @IBOutlet weak var ImagemFilme: UIImageView!
     @IBOutlet weak var labelDescricaoShowDetais: UILabel!
     @IBOutlet weak var avaliacaoFilme: UILabel!
+    @IBOutlet weak var avaliacao: UILabel!
     @IBOutlet weak var bannerFilme: UIImageView!
     
     var detailsViewModels = [MainViewModel]()
@@ -28,6 +28,7 @@ class ShowDetailsViewController: UIViewController {
             self.detailsViewModels = movie.map({return MainViewModel(movie: $0)})
         }
         configCell()
+        setupAccessibility()
     }
     
     func configCell(){
@@ -41,9 +42,9 @@ class ShowDetailsViewController: UIViewController {
         let backdrop = movieSelected?.backdropPath
         if let urlBackdrop = URL(string: "https://image.tmdb.org/t/p/w185\(backdrop!)")
             {
-            self.ImagemFilme!.af_setImage(withURL: urlBackdrop)
-            self.ImagemFilme.layer.cornerRadius = 10
-            self.ImagemFilme.layer.masksToBounds = true
+            self.bannerFilme!.af_setImage(withURL: urlBackdrop)
+            self.bannerFilme.layer.cornerRadius = 10
+            self.bannerFilme.layer.masksToBounds = true
             }
         else{
             print("error")
