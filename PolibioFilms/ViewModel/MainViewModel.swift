@@ -21,6 +21,6 @@ struct MainViewModel{
         self.title = movie.title ?? movie.name!
 //        self.name =  ""
         self.overview = movie.overview ?? ""
-        self.voteAverage = movie.voteAverage
+        self.voteAverage = movie.voteAverage ?? 0
     }
 }
