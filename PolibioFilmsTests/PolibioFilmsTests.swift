@@ -41,7 +41,8 @@ class PolibioFilmsTests: XCTestCase {
 
     func testAPI(){
         
-        MovieService().getMovie { (movie) in            XCTAssertEqual(20, movie.count)
+        MovieService().getMovie { (movie) in
+            XCTAssertEqual(20, movie.count)
         }
         
     }
