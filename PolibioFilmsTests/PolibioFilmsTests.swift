@@ -32,7 +32,8 @@ class PolibioFilmsTests: XCTestCase {
     }
     
     func testMainViewModel(){
-//        let mainViewModel = MainViewModel(poster: Movie)
+        var movie = Movie(voteAverage: 0.0, title: "title", overview: "title", releaseDate: "title", adult: true, backdropPath: "title", genreIDS: [0], voteCount: 0, originalLanguage: OriginalLanguage(rawValue: "en"), originalTitle: "title", posterPath: "title", id: 0, video: true, popularity: 0.0, mediaType: MediaType(rawValue: "movie"), firstAirDate: "title", name: "title", originCountry: ["title"], originalName: "title")
+        XCTAssertNotNil(movie)
     }
 
 }
