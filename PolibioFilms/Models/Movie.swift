@@ -35,7 +35,7 @@ struct Movie: Codable {
     let posterPath: String?
     let id: Int
     let video: Bool?
-    let popularity: Double
+    let popularity: Double?
     let mediaType: MediaType
     let firstAirDate, name: String?
     let originCountry: [String]?
