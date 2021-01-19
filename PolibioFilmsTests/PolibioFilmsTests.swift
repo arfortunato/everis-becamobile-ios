@@ -27,18 +27,24 @@ class PolibioFilmsTests: XCTestCase {
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         measure {
-            // Put the code you want to measure the time of here.
-        }
+
+    }
     }
     
     func testMovieService(){
-        var movie = Movie(voteAverage: 0.0, title: "title", overview: "title", releaseDate: "title", adult: true, backdropPath: "title", genreIDS: [0], voteCount: 0, originalLanguage: OriginalLanguage(rawValue: "en"), originalTitle: "title", posterPath: "title", id: 0, video: true, popularity: 0.0, mediaType: MediaType(rawValue: "movie"), firstAirDate: "title", name: "title", originCountry: ["title"], originalName: "title")
+      
+        let movie = Movie(voteAverage: 0.0, title: "title", overview: "overview", releaseDate: "releaseDate", adult: true, backdropPath: "backdropPath", genreIDS: [0], voteCount: 0, originalLanguage: OriginalLanguage(rawValue: "en"), originalTitle: "originalTitle", posterPath: "posterPath", id: 0, video: true, popularity: 0.0, mediaType: MediaType(rawValue: "movie"), firstAirDate: "firstAirDate", name: "name", originCountry: ["originCountry"], originalName: "originalName")
+        let movies = Movies(page: 0, results: [movie], totalPages: 0, totalResults: 0)
         XCTAssertNotNil(movie)
-        XCTAssertEqual(movie.title, "title")
-        XCTAssertEqual(movie.overview, "title")
+        XCTAssertNotNil(movies)
     }
 
-    func testMainViewModel(){
-
-
+    func testAPI(){
+        
+        MovieService().getMovie { (movie) in            XCTAssertEqual(20, movie.count)
+        }
+        
+    }
+        
+        
 }
