@@ -20,7 +20,7 @@ class ShowDetailsViewController: UIViewController {
     let client: MovieServiceProtocol = MovieService()
     
     var movieSelected: MainViewModel?
-    var posterPath: String?
+    //var posterPath: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
