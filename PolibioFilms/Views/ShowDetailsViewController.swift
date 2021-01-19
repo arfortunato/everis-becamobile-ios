@@ -55,7 +55,6 @@ class ShowDetailsViewController: UIViewController {
             navigation.popViewController(animated: true)
             
         }
-    
     }
 
 }
